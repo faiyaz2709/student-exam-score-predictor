@@ -1,0 +1,26 @@
+Student_Score_Predictor/
+│
+├── .venv/
+│
+├── dataset/
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_eda.ipynb
+│   └── 04_model_training.ipynb
+│
+├── src/
+│
+├── models/
+│
+├── check_environment.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
