@@ -159,3 +159,41 @@ The included dataset is synthetic and does not contain real student records. Thi
 ## 📄 License
 
 No license file is included yet. Add a license if you want to specify how others may use or distribute this project.
+
+
+## Live web application
+
+The Streamlit version uses the existing trained model and the same four features as the desktop app: study hours, attendance, previous score, and sleep hours.
+
+### Run locally
+
+Install the project dependencies and start the web app:
+
+```powershell
+python -m pip install -r requirements.txt
+streamlit run web_app.py
+```
+
+### Deploy on Streamlit Community Cloud
+
+1. Sign in to [Streamlit Community Cloud](https://share.streamlit.io/) with the GitHub account that can access this repository.
+2. Choose **Create app**, select this repository and the `main` branch, and set the app file path to `web_app.py`.
+3. Deploy. No secrets are required. The repository must include `models/student_score_model.pkl`.
+
+The live app URL can be added here after deployment succeeds.
+
+## Build the Windows desktop application
+
+Build on Windows from the repository root. The existing Tkinter source and trained model are required.
+
+```powershell
+python -m pip install -r requirements.txt
+python -m pip install pyinstaller
+python -m PyInstaller --clean --onefile --windowed --name StudentScorePredictor --add-data "models/student_score_model.pkl;models" app.py
+```
+
+The executable is written to `dist\StudentScorePredictor.exe`. Test it on a Windows computer without the development environment before sharing it. A GitHub Release can be created to distribute the executable; no release is created by this README update.
+
+## Dataset limitation
+
+The model was trained and evaluated using synthetic data. Its reported metrics do not establish accuracy for real students. This demonstration should not be used to make decisions about real students.
